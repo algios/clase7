@@ -20,7 +20,7 @@ $publicaciones=Usuario::find(Auth::user()->id)->misPublicaciones();
         
     }
     public function getVer($id){
-        if($id==Auth::user()->id)return Redirect::to("/profile");
+        if($id==Auth::user()->id){return Redirect::to("/profile");}
         $usuario = Usuario::find($id);
         if($usuario){
             $publicaciones=$usuario->misPublicaciones();

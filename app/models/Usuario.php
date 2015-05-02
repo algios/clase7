@@ -6,7 +6,7 @@ class Usuario extends Eloquent {
     protected $table = 'usuario';
 
     public function misPublicaciones(){
-    $publicaciones = Publicacion::where('user_id',Auth::user()->id)
+    return Publicacion::where('user_id',$this->id)
                                         ->orderBy('id','desc')
                                         ->get();
       
